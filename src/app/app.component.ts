@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { myUsers } from './models/myUsers';
+// export interface myUsers {
+//   name: string;
+//   email: string;
+//   phone?: string;
+// }
 
 @Component({
   selector: 'app-root',
@@ -7,16 +13,35 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+constructor() {
+  // used to initialize the the attributes
+  this.myUsers = {
+    name: '',
+    email: ''
+  };
+  this.name = '';
+  this.email = '';
+ }
+
 addUsers() {
     // add the user to the list
-    this.users.push({name: this.name, email: this.email});
+    this.myUsers = {
+      name: this.name,
+      email: this.email,
+      
+    }
+    this.users.push(this.myUsers);
     // clear the form
     this.name = '';
     this.email = '';
 }
-  title = 'chartform';
-  name = '';
-  email = '';
+
+  // intention is a nice clean way to show the used attributes
+  showDataUsers: any = [];
+  showDataEmails: any  = [];
+  name:string;
+  email:string;
+  myUsers: myUsers;
 
   // create a list of users
   users = [
@@ -36,4 +61,14 @@ addUsers() {
     this.name = this.name.toLowerCase();
     this.email = this.email.toLowerCase();
   }
+
+  showUsers() {
+    this.showDataUsers = this.users.map(user => user.name);
+    
+  }
+
+  showEmails() {
+    this.showDataEmails = this.users.map(user => user.email);
+  }
+
 }

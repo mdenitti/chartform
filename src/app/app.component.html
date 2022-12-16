@@ -7,6 +7,8 @@
       <button (click)="addUsers()" class="btn btn-primary mt-2 me-2">Submit</button>
       <button (click)="transformToUpperCase()" class="btn btn-danger mt-2 me-2">UPPERCASE</button>
       <button (click)="transformToLowerCase()" class="btn btn-danger mt-2 me-2">LOWERCASE</button>
+      <button (click)="showUsers()" class="btn btn-warning mt-2 me-2">USERS</button>
+      <button (click)="showEmails()" class="btn btn-warning mt-2 me-2">EMAILS</button>
       <div class="alert alert-primary mt-2" role="alert">
         <b>Current input: </b>{{name}} - {{email}}
       </div>
@@ -20,4 +22,22 @@
       </div>
     </div>
   </div>
+
+  <div *ngIf="showDataUsers.length !=0" class="row users">
+    <div class="col">
+      <h2>User names</h2>
+      <div *ngFor="let showDataUser of showDataUsers" class="">
+        {{showDataUser}}
+      </div>
+    </div>
+    <div class="col">
+      <h2>User emails</h2>
+      <div *ngFor="let showDataEmail of showDataEmails" class="">
+        {{showDataEmail}}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showDataUsers.length ==0 " class="row users">No records selected in user/email view</div>
 </div>
+
+<app-viewchildexample></app-viewchildexample>

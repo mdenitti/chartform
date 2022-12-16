@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 // import forms module to use ngModel
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { ViewchildexampleComponent } from './viewchildexample/viewchildexample.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewchildexampleComponent
   ],
   imports: [
     BrowserModule,
