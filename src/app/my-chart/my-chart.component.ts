@@ -67,7 +67,6 @@ export class MyChartComponent {
 
   ngOnInit(): void {
     this.fetchUsers();
-    console.log(this.chartOptions);
-  }
+    }
 
 }

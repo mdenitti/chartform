@@ -14,19 +14,22 @@ export class ViewchildexampleComponent implements OnInit {
 
   @ViewChild('name') name: any;
   @ViewChild('email') email: any;
+  @ViewChild('age') age: any;
 
   totalusers: any = [];
   myUsers!: myUsers;
 
-  addUsers(arg0: string, arg1: string) {
+  addUsers(arg0: string, arg1: string, arg2:string) {
     this.myUsers = {
       name: arg0,
-      email: arg1
+      email: arg1,
+      age: arg2
     }
     this.totalusers.push(this.myUsers);
     
     this.name.nativeElement.value = '';
     this.email.nativeElement.value = '';
+    this.age.nativeElement.value = '';
   }
 
   constructor() { }

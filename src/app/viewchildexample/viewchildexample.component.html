@@ -4,7 +4,9 @@
           <h1>My app-viewchildexample</h1>
           <input class="form-control mt-2" type="text" #name placeholder="Please enter name">
           <input class="form-control mt-2" type="text" #email placeholder="E-mail adress">
-          <button (click)="addUsers(name.value,email.value)" class="btn btn-primary mt-2 me-2">Submit</button>
+          <input class="form-control mt-2" type="number" #age placeholder="Age">
+
+          <button (click)="addUsers(name.value,email.value, age.value)" class="btn btn-primary mt-2 me-2">Submit</button>
       
         </div>
       </div>
@@ -13,5 +15,5 @@
     
     <div class="container">
         <div *ngFor="let totaluser of totalusers" class="">
-          {{totaluser.name}} - {{totaluser.email}}
+          {{totaluser.name}} - {{totaluser.email}} - {{totaluser.age}}
     </div>
