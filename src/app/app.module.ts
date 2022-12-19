@@ -4,15 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ViewchildexampleComponent } from './viewchildexample/viewchildexample.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { MyChartComponent } from './my-chart/my-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ViewchildexampleComponent
+    ViewchildexampleComponent,
+    MyChartComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
