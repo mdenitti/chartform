@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { myUsers } from './models/myUsers';
 import {
   ChartComponent,
@@ -7,6 +7,7 @@ import {
   ApexXAxis,
   ApexTitleSubtitle
 } from "ng-apexcharts";
+import {ClientService } from './shared/services/client.service';
 
 // export interface myUsers {
 //   
@@ -23,7 +24,9 @@ import {
 export class AppComponent {
 @ViewChild("chart") chart!: ChartComponent;
 
-constructor() {
+// initionalise clientservice outside the constructor
+// clientService = new ClientService();
+constructor(private clientService: ClientService) {
   // used to initialize the the attributes
   this.myUsers = {
     name: '',
@@ -35,6 +38,12 @@ constructor() {
   this.age = '';
   this.updateChart();
  }
+
+ // ngoninit is a lifecycle hook
+  // it is called when the component is initialized
+  ngOnInit() {
+    console.log(this.clientService.getClients())
+  }
 
 addUsers() {
     // add the user to the list
