@@ -1,1 +1,26 @@
-<p>client works!</p>
+<h1>An overview of our clients</h1>
+
+<input type="text" class="form-control" placeholder="search for a client" #searchclient>
+<button class="btn btn-primary mt-2" (click)="search(searchclient.value)">Search</button>
+<hr>
+<input type="range" min="0" max="10" step="1" (change)="sortClients()" [(ngModel)]="sortRange">
+<div class="alert alert-info" role="alert"><p>Sort by: {{sortRange}}</p></div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th>Client</th>
+        <th>Number</th>
+        <th>Phone</th>
+        <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of clients">
+        <td>{{client.name}}</td>
+        <td>{{client.number}}</td>
+        <td>{{client.phone}}</td>
+        <td>{{client.email}}</td>
+        </tr>
+    </tbody>
+</table>

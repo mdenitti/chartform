@@ -15,4 +15,11 @@ export class ClientService {
     ]
   }
 
+  // create a method to get data from an rest remote api
+  getClientApi() {
+    return fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+  }
+
 }
+
